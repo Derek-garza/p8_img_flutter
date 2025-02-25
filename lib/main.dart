@@ -1,43 +1,67 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MiImagen());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiImagen extends StatelessWidget {
+  const MiImagen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+            title: const Text("Mis imagenes",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontStyle: FontStyle.italic,
+                    color: Color(0xff070707))),
+            backgroundColor: Color(0xffa20701)),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const SizedBox(
+                height: 20,
+              ),
+              const Text('Derek Garza 22308051281196 6-J',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black)),
+              Image.network(
+                "https://raw.githubusercontent.com/Derek-garza/act8_imagenes_flutter-6J/refs/heads/main/king_von.jpg",
+                width: 200,
+                height: 200,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text('Hombre Negro',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black)),
+              Image.network(
+                "https://raw.githubusercontent.com/Derek-garza/act8_imagenes_flutter-6J/refs/heads/main/inidandih.jpg",
+                height: 200, // Ajusta la altura según tus necesidades
+                width: 200, // Ajusta el ancho según tus necesidades
+                fit: BoxFit.cover,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text('Hombre Negro',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black)),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+              // Ajusta el modo de ajuste según tus necesidades);
+            ],
+          ),
         ),
       ),
-    );
-  }
-}
+    ); //Material App
+  } // Widget
+} // CLase Imagen
