@@ -1,0 +1,6 @@
+package com.Garzaimg
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
